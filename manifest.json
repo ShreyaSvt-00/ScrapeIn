@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "version": "1.26",
+    "name": "ScrapeIn",
+    "description": "Extract Linkedin profile information as json.",
+    "content_scripts": [{
+        "matches": ["*://*.linkedin.com/*"],
+        "js": ["content.js"]
+    }],
+    "browser_action": {
+        "default_title": "ScrapeIn",
+        "default_popup": "popup.html"
+
+    },
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "clipboardRead",
+        "clipboardWrite",
+        "storage"
+    ]
+}
